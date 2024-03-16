@@ -21,11 +21,11 @@ def sidebar():
             type="password",
             placeholder="Paste your OpenAI API key here",
             help="You can obtain your API key from the VC Pilot dashboard.",
-            value=os.environ.get("VCPILOT_API_KEY", None)
-            or st.session_state.get("VCPILOT_API_KEY", ""),
+            value=os.environ.get("OPEN_API_KEY", None)
+            or st.session_state.get("OPEN_API_KEY", ""),
         )
 
-        st.session_state["VCPILOT_API_KEY"] = vc_pilot_api_key
+        st.session_state["OPEN_API_KEY"] = vc_pilot_api_key
 
         st.markdown("---")
         st.markdown("# About VCPilot")
