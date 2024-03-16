@@ -6,41 +6,24 @@ def faq():
     st.markdown(
         """
 # FAQ
-## How does KnowledgeGPT work?
-When you upload a document, it will be divided into smaller chunks 
-and stored in a special type of database called a vector index 
-that allows for semantic search and retrieval.
+## How does VCPilot work?
+VCPilot analyzes articles, websites, and blogs about AI technology startups using advanced AI. It breaks down the information into manageable insights, utilizing a combination of semantic search and AI analysis to assess the credibility, innovation, and market fit of these ventures.
 
-When you ask a question, KnowledgeGPT will search through the
-document chunks and find the most relevant ones using the vector index.
-Then, it will use GPT3 to generate a final answer.
+## Is the startup evaluation data secure with VCPilot?
+Yes, your data and the information about startups evaluated are secure. VCPilot prioritizes data security, ensuring that sensitive information is handled with the utmost care. All data is encrypted and stored in secure servers.
 
-## Is my data safe?
-Yes, your data is safe. KnowledgeGPT does not store your documents or
-questions. All uploaded data is deleted after you close the browser tab.
+## Why is VCPilot focused on AI technology startups?
+With approximately 200 AI research papers published daily and numerous startups emerging, the AI sector is ripe for innovation but challenging to navigate. VCPilot provides venture capital professionals with a focused tool to assess these startups efficiently, filtering out noise and highlighting potential leaders in the AI revolution.
 
-## Why does it take so long to index my document?
-If you are using a free OpenAI API key, it will take a while to index
-your document. This is because the free API key has strict [rate limits](https://platform.openai.com/docs/guides/rate-limits/overview).
-To speed up the indexing process, you can use a paid API key.
+## How does VCPilot ensure the relevance of its analysis?
+VCPilot's AI algorithms are trained on a vast database of AI research papers and startup data, ensuring that the analysis is grounded in the latest advancements and trends in the field. The system is continually updated to reflect new research and market developments.
 
-## What do the numbers mean under each source?
-For a PDF document, you will see a citation number like this: 3-12. 
-The first number is the page number and the second number is 
-the chunk number on that page. For DOCS and TXT documents, 
-the first number is set to 1 and the second number is the chunk number.
+## Can VCPilot predict the success of a startup?
+While VCPilot provides valuable insights into the potential and risks associated with AI technology startups, predicting success involves many variables. VCPilot aids in decision-making by providing in-depth analysis and risk assessment but does not guarantee the future success of any venture.
 
-## Are the answers 100% accurate?
-No, the answers are not 100% accurate. KnowledgeGPT uses GPT-3 to generate
-answers. GPT-3 is a powerful language model, but it sometimes makes mistakes 
-and is prone to hallucinations. Also, KnowledgeGPT uses semantic search
-to find the most relevant chunks and does not see the entire document,
-which means that it may not be able to find all the relevant information and
-may not be able to answer all questions (especially summary-type questions
-or questions that require a lot of context from the document).
+## How current is the data used by VCPilot?
+VCPilot's database is regularly updated with the latest AI research papers and news about startups in the AI sector. This ensures that the analysis provided is based on the most current information available.
 
-But for most use cases, KnowledgeGPT is very accurate and can answer
-most questions. Always check with the sources to make sure that the answers
-are correct.
+Remember, while VCPilot offers powerful tools for evaluating AI technology startups, it's essential to complement its insights with thorough due diligence and expert consultation.
 """
     )
