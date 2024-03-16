@@ -6,38 +6,38 @@ import os
 
 load_dotenv()
 
-
 def sidebar():
     with st.sidebar:
         st.markdown(
-            "## How to use\n"
-            "1. Enter your [OpenAI API key](https://platform.openai.com/account/api-keys) below🔑\n"  # noqa: E501
-            "2. Upload a pdf, docx, or txt file📄\n"
-            "3. Ask a question about the document💬\n"
+            "## How to Use VCPilot\n"
+            "1. Input the URL or upload articles, blogs, or documents related to an AI startup.📄\n"
+            "2. Review the automatically generated risk profile and potential analysis by VCPilot.🔍\n"
+            "3. Explore detailed insights and follow-up questions to further understand the startup's viability and innovation.💡\n"
         )
-        api_key_input = st.text_input(
+
+        # Assuming VC Pilot requires an API key for functionality
+        vc_pilot_api_key = st.text_input(
             "OpenAI API Key",
             type="password",
-            placeholder="Paste your OpenAI API key here (sk-...)",
-            help="You can get your API key from https://platform.openai.com/account/api-keys.",  # noqa: E501
-            value=os.environ.get("OPENAI_API_KEY", None)
-            or st.session_state.get("OPENAI_API_KEY", ""),
+            placeholder="Paste your OpenAI API key here",
+            help="You can obtain your API key from the VC Pilot dashboard.",
+            value=os.environ.get("VCPILOT_API_KEY", None)
+            or st.session_state.get("VCPILOT_API_KEY", ""),
         )
 
-        st.session_state["OPENAI_API_KEY"] = api_key_input
+        st.session_state["VCPILOT_API_KEY"] = vc_pilot_api_key
 
         st.markdown("---")
-        st.markdown("# About")
+        st.markdown("# About VCPilot")
         st.markdown(
-            "📖KnowledgeGPT allows you to ask questions about your "
-            "documents and get accurate answers with instant citations. "
+            "VCPilot assists venture capital investors and analysts in evaluating AI technology startups by analyzing articles, websites, and blogs, providing a focused lens for swift assessment of their credibility, innovation, and market fit."
         )
         st.markdown(
-            "This tool is a work in progress. "
-            "You can contribute to the project on [GitHub](https://github.com/mmz-001/knowledge_gpt) "  # noqa: E501
-            "with your feedback and suggestions💡"
+            "Our AI-driven approach offers relevant and actionable insights, streamlining the task of identifying potential leaders in the AI revolution."
         )
-        st.markdown("Made by [mmz_001](https://twitter.com/mm_sasmitha)")
+        st.markdown(
+            "Developed by a team dedicated to enhancing venture capital investment strategies, VCPilot is your go-to tool for navigating the dynamic AI startup landscape."
+        )
         st.markdown("---")
 
         faq()
