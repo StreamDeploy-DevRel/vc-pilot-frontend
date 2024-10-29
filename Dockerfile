@@ -21,16 +21,16 @@ COPY poetry.lock pyproject.toml poetry.toml ./
 RUN  poetry install --no-interaction --no-ansi --no-root --without dev,lint,extras
 
 
-FROM python:3.10-slim
+# FROM python:3.10-slim
 
-WORKDIR /app
+# WORKDIR /app
 
-COPY --from=builder /app /app
+# COPY --from=builder /app /app
 
-COPY /knowledge_gpt ./knowledge_gpt 
+# COPY /knowledge_gpt ./knowledge_gpt 
 
-ENV PATH="/app/.venv/bin:$PATH"
+# ENV PATH="/app/.venv/bin:$PATH"
 
-EXPOSE 8501
+# EXPOSE 8501
 
-CMD ["python", "-m", "streamlit", "run", "knowledge_gpt/main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+# CMD ["python", "-m", "streamlit", "run", "knowledge_gpt/main.py", "--server.port=8501", "--server.address=0.0.0.0"]
