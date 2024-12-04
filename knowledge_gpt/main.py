@@ -43,6 +43,10 @@ if not openai_api_key:
         " https://platform.openai.com/account/api-keys."
     )
 
+tech_crunch_article_link = st.text_input(
+    "Insert a TechCrunch article link",
+    help="Paste the URL of a TechCrunch article you want to analyze."
+)
 
 uploaded_file = st.file_uploader(
     "Upload a pdf, docx, or txt file",
@@ -57,13 +61,13 @@ with st.expander("Advanced Options"):
     show_full_doc = st.checkbox("Show parsed contents of the document")
 
 
-if not uploaded_file:
+if not uploaded_file and not tech_crunch_article_link:
     st.stop()
 
 try:
-    file = read_file(uploaded_file)
+    file = read_file(uploaded_file) if uploaded_file else None
 except Exception as e:
-    display_file_read_error(e, file_name=uploaded_file.name)
+    display_file_read_error(e, file_name=uploaded_file.name if uploaded_file else "TechCrunch article")
 
 chunked_file = chunk_file(file, chunk_size=300, chunk_overlap=0)
 
